@@ -16,16 +16,14 @@ function App() {
   const onSubmit = async (formData) => {
     setLoading(true);
     const data = await axios.get(
-      `https://yt-download-server-kcr3-1wmdhg6dh-hasan0734.vercel.app/download?url=${formData?.searchURL}`
+      `https://yt-download-server-kcr3.vercel.app/download?url=${formData?.searchURL}`
     );
     setData(data);
     setLoading(false);
   };
 
-  console.log(data);
-  console.log(errors);
   return (
-    <div className="px-16 md:px-20 py-16 md:py-20 ">
+    <div className="px-8 md:px-20 py-16 md:py-20 ">
       <div className="flex justify-center">
         <div>
           <div className="flex justify-center">
@@ -119,16 +117,16 @@ function App() {
             <>
               <div className="flex justify-center mt-10">
                 <iframe
-                  className="rounded"
-                  width={570}
-                  height={320}
+                  className="rounded w-[300px] sm:w-[500px] md:w-[570px]  h-[200px] sm:h-[300px] md:h-[320px]"
+                  // width={570}
+                  // height={320}
                   src={data?.data?.url}
                   title="video"
                 />
               </div>
 
               {/* download button and link */}
-              <div className="w-full mt-20 grid grid-cols-5 gap-4">
+              <div className="w-full mt-20 grid grid-cols-2 lg:grid-cols-5 gap-4">
                 {data?.data?.info?.map((value, i) => (
                   <a
                     target="_blank"
