@@ -16,7 +16,7 @@ function App() {
   const onSubmit = async (formData) => {
     setLoading(true);
     const data = await axios.get(
-      `http://localhost:4000/download?url=${formData?.searchURL}`
+      `https://yt-download-server-kcr3-1wmdhg6dh-hasan0734.vercel.app/download?url=${formData?.searchURL}`
     );
     setData(data);
     setLoading(false);
