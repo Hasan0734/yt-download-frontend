@@ -56,18 +56,18 @@ function App() {
               defaultValue={searchURL}
               {...register("searchURL", {
                 required: true,
-                pattern: /[a-zA-Z]+:\/\/yout/i,
+                pattern: /[a-zA-Z]+:\/\/www.you/i,
               })}
               className="px-3 py-2 border border-blue-500 w-[300px] rounded-md focus:outline-green-700 focus:outline-1"
               type="text"
               placeholder="Paste your video link"
             />
-            {errors?.searchURL.type === "required" && (
+            {errors?.searchURL?.type === "required" && (
               <p className="text-[12px] text-red-500 font-normal mt-1">
                 This field required!
               </p>
             )}
-            {errors?.searchURL.type === "pattern" && (
+            {errors?.searchURL?.type === "pattern" && (
               <p className="text-[12px] text-red-500 font-normal mt-1">
                 Please paste valid link
               </p>
